@@ -1,0 +1,134 @@
+/* --------------------------------
+ * 変数管理
+ * -------------------------------- */
+
+/* 色 ----------- */
+$color-main: #1B1310; /* ベース色 */
+$color-text: #141414; /* テキスト色 */
+$color-white: #fff;
+
+/* フォント ----------- */
+$font-default: "Noto Sans JP", meiryo, sans-serif; /* 標準フォント */
+$font-english: sans-serif;
+$font-base: $font-default;
+
+/* 余白 ----------- */
+$pc-padding: 50px;
+$tb-padding: 30px;
+$sp-padding: 16px;
+
+//*-------------------*
+//*  レスポンシブ定義
+//*-------------------*
+/* ブレイクポイント ----------- */
+$tb: 959px; /* タブレット */
+$sp: 599px; /* スマホ */
+
+/* メディアクエリ ----------- */
+/* タブレット */
+@mixin tb {
+    @media screen and (max-width: $tb) {
+      @content;
+    }
+}
+/* スマホ */
+@mixin sp {
+    @media screen and (max-width: $sp) {
+        @content;
+    }
+}
+
+/* --------------------------------
+ * font-size定義
+ * -------------------------------- */
+/* $sizeにpx表示を入れて使う */
+
+@mixin font($size) {
+    font-size: $size + px; /* IE9以前に対応する */
+    font-size: ($size / 16) + rem;
+}
+
+/* --------------------------------
+ * base(共通)
+ * -------------------------------- */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+body {
+    color: $color-text;
+    @include font(16);
+    font-family: $font-base;
+}
+
+body.noscroll{
+    overflow: hidden;
+}
+
+a:link, a:visited, a:hover, a:active {
+    text-decoration: none;
+}
+
+/* 非表示 */
+.hidden {
+    display: none;
+}
+
+/* 画像 */
+img {
+    width: 100%;
+    vertical-align: bottom;
+}
+
+
+.inner {
+    max-width: calc(1030px + #{$pc-padding} * 2);
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: $pc-padding;
+    padding-left: $pc-padding;
+
+    @include tb {
+        max-width: calc(700px + #{$pc-padding} * 2);
+        padding-right: $tb-padding;
+        padding-left: $tb-padding;
+    }
+
+    @include sp {
+        max-width: 100%;
+        padding-right: $sp-padding;
+        padding-left: $sp-padding;
+    }
+}
+
+.section {
+    padding-top: 104px;
+    padding-bottom: 50px;
+}
+
+.section-title {
+    margin-bottom: 70px;
+    @include font(36);
+    font-weight: bold;
+    text-align: center;
+}
+
+.section-message {
+    margin-bottom: 40px;
+    @include font(24);
+    font-weight: bold;
+    line-height: 2;
+    letter-spacing: 2.4px;
+
+    @include sp {
+        @include font(20);
+        margin-bottom: 30px;
+    }
+}
+
+.section-text {
+    @include font(14);
+    font-weight: bold;
+    line-height: 2.14;
+    letter-spacing: 0.7px;
+}

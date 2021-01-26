@@ -1,0 +1,60 @@
+/* --------------------------------
+ * header
+ * -------------------------------- */
+.header {
+    width: 100%;
+    height: 74px;
+    background-color: $color-main;
+    border-bottom: 2px solid #fff;
+    font-family: Roboto;
+
+    &__inner {
+        max-width: calc(1200px + #{$pc-padding} * 2);
+        display: flex;
+    }
+
+    // ロゴ
+    &__logo {
+        margin-top: 20px;
+        color: $color-white;
+        @include font(26);
+        font-weight: 600;
+    }
+}
+
+// ナビ
+.header__nav {
+    margin-top: 30px;
+    margin-left: auto;
+
+}
+
+.nav {
+    color: $color-white;
+
+    &__items {
+        display: flex;
+    }
+
+    &__item {
+
+        a {
+            display: block;
+        }
+
+    }
+}
+
+.nav__item + .nav__item {
+    margin-left: 56px;
+}
+
+// ハンバーガー
+.hamburger {
+    display: none;
+}
+
+// スマホ版メニュー
+.sp-nav {
+    display: none;
+}

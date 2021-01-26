@@ -1,0 +1,177 @@
+/* --------------------------------
+ * ■　hero
+ * -------------------------------- */
+.hero {
+    position: relative;
+    
+    &__img {
+        width: 100%;
+        height: 740px;
+
+        &--pc {
+            display: block;
+            height: 740px;
+            object-fit: cover;
+        }
+
+        &--sp {
+            display: none;
+        }
+    }
+
+    &__message {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 450px;
+        height: 136px;
+        font-family: "Roboto";
+        color: $color-white;
+        @include font(50);
+        text-align: center;
+        line-height: 136px;
+        border: 2px solid $color-white;
+    }
+}
+
+/* --------------------------------
+ * 1.About
+ * -------------------------------- */
+
+/* --------------------------------
+ * 2.Service
+ * -------------------------------- */
+.service {
+
+    &__item {
+        display: flex;
+        justify-content: space-between;
+
+        &:first-child {
+            flex-direction: row-reverse;
+        }
+    }
+
+    &__img {
+        max-width: 480px;
+        height: 240px;
+
+        img {
+            display: block;
+            height: 240px;
+            object-fit: cover;
+        }
+    }
+
+    &__content {
+        width: 480px;
+        max-width: 100%;
+    }
+}
+
+.service__item + .service__item {
+    margin-top: 50px;
+}
+
+/* --------------------------------
+ * 3.News
+ * -------------------------------- */
+.news {
+
+
+    &__items {
+        display: flex;
+    }
+
+    &__item {
+        max-width: calc(33.33333% - 35px * 2 / 3);
+        box-shadow: 0px 0px 6px #1B131066;
+    }
+
+    &__img {
+        display: block;
+        height: 200px;
+        object-fit: cover;
+
+        img {
+            height: 200px;
+            object-fit: cover;
+        }
+    }
+
+    &__text {
+        padding: 18px;
+        font-family: 'メイリオ', 'Meiryo';
+        @include font(13);
+        letter-spacing: 0.65px;
+        line-height: 1.9;
+    }
+}
+
+.news__item + .news__item {
+    margin-left: 35px;
+}
+
+/* --------------------------------
+ * 4.お問い合わせ
+ * -------------------------------- */
+.contact {
+
+    &__title {
+        @include font(24);
+        letter-spacing: 2.4px;
+    }
+
+    &__inner {
+        max-width: calc(700px + #{$pc-padding} * 2);
+    }
+
+
+    &__form {
+        font-family: " Kaku Gothic ProN";
+
+        .input {
+            width: 100%;
+            height: 30px;
+            padding: 5px;
+            margin-bottom: 22px;
+            border: 1px solid #141414;
+        }
+
+        .textarea {
+            width: 100%;
+            height: 170px;
+            padding: 5px;
+            margin-bottom: 50px;
+            border: 1px solid #141414;
+        }
+    }
+
+    &__btn {
+        display: block;
+        margin: 0 auto;
+        padding: 16px 98px;
+        background-color: #1B1310;
+        @include font(20px);
+        color: $color-white;
+        box-shadow: 0px 0px 6px #1B1310;
+        border-radius: 50px;
+    }
+}
+
+/* --------------------------------
+ * footer
+ * -------------------------------- */
+.footer {
+    width: 100%;
+    height: 78px;
+    background-color: #1B1310;
+
+    &__copyright {
+        color: $color-white;
+        padding-top: 30px;
+        @include font(14);
+        text-align: center;
+    }
+}

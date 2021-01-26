@@ -1,0 +1,102 @@
+/* --------------------------------
+ * header
+ * -------------------------------- */
+@include tb {
+
+    
+
+}
+
+@include sp {
+
+    .nav {
+        display: none;
+    }
+
+    // ------------ここからhamburgerメニュー----------------->
+    // スマホのナビゲーション(ハンバーガーメニュー)
+    // ハンバーガーの部分
+    .hamburger {
+        display: block;
+        margin-top: 26px;
+        margin-left: auto;
+        z-index: 300;
+    }
+
+    .hamburger__btn,
+    .hamburger__line {
+        display: inline-block;
+        transition: all .4s; // アニメーションにかかる時間
+    }
+
+    .hamburger__btn {
+        position: relative;
+        width: 25px; // ハンバーガー全体の横幅
+        height: 16px; // ハンバーガー全体の縦幅
+    }
+
+    .hamburger__line {      
+        position: absolute;
+        left: 0;
+        width: 100%;
+        height: 2px; // ラインの高さ
+        background-color: #fff; // ラインの色
+        border-radius: 0; // 角の丸み
+    }
+
+    .line--top {   
+        top: 0;
+    }
+
+    .line--middle {    
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    .line--bottom {
+        bottom: 0;
+    }
+    
+    // タップ後の動き
+    .hamburger__btn.active .line--top {
+        transform: rotate(-45deg) translate(-2px, 8px);
+    }
+    .hamburger__btn.active .line--middle {
+        opacity: 0;
+    }
+    .hamburger__btn.active .line--bottom {
+        transform: rotate(45deg) translate(-2px, -8px);
+    }
+
+    // スマホ版メニュー
+    .sp-nav {
+        display: none;
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 100;
+
+        &__bg {
+            width: 100%;
+            height: 100%;
+            background-color: #1B1310;
+        }
+
+        &__items {
+            display: block;
+            position: absolute;
+            top: 50%;        
+            left: 50%;        
+            transform: translate(-50%,-50%);
+            color: #fff;
+            text-align: center;
+        }
+    }
+
+    .sp-nav__item + .sp-nav__item {
+        margin-top: 50px;
+    }
+
+}
